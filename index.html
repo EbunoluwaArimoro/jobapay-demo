@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,12 +8,31 @@
     />
     <title>Jobapay — Platform Demo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <style>
+      block */ @font-face {
+        font-family: "BirkenNue";
+        src: url("./assets/fonts/BirkenNue-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Poppins";
+        src: url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      /* ── BRAND TOKENS ───────────────────────────────────────────── */
+      :root {
+        /* ... keep your colors exactly the same ... */
+        --font-head: "BirkenNue", sans-serif;
+        --font-body: "Poppins", sans-serif;
+        --font-mono: monospace;
+      }
+
+      <style>
       /* ── BRAND TOKENS ───────────────────────────────────────────── */
       :root {
         --teal: #004d43;
@@ -1465,35 +1484,12 @@
   <body>
     <div id="entry">
       <nav class="entry-nav">
-        <svg
-          height="22"
-          viewBox="0 0 140 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <text
-            x="0"
-            y="30"
-            font-family="DM Sans, sans-serif"
-            font-size="26"
-            font-weight="700"
-            fill="#d0ff71"
-            letter-spacing="-1"
-          >
-            Joba
-          </text>
-          <text
-            x="62"
-            y="30"
-            font-family="DM Sans, sans-serif"
-            font-size="26"
-            font-weight="300"
-            fill="rgba(255,255,255,0.7)"
-            letter-spacing="-1"
-          >
-            pay
-          </text>
-        </svg>
+        <img
+          src="./assets/logo-white.png"
+          class="entry-nav-logo"
+          alt="Jobapay"
+          style="height: 28px"
+        />
         <span class="entry-nav-label">Platform Demo</span>
       </nav>
 
@@ -1568,7 +1564,11 @@
         <div class="screen" id="sManager">
           <div class="app-bar">
             <div>
-              <div class="app-bar-wordmark">Jobapay</div>
+              <img
+                src="./assets/logo-green.png"
+                alt="Jobapay"
+                style="height: 20px; object-fit: contain; margin-bottom: 2px"
+              />
               <div class="app-bar-sub">Portfolio Overview</div>
             </div>
             <button class="avatar-chip teal" onclick="goTo('sManagerProfile')">
@@ -1695,7 +1695,11 @@
         <div class="screen" id="sStaff">
           <div class="app-bar">
             <div>
-              <div class="app-bar-wordmark">Jobapay</div>
+              <img
+                src="./assets/logo-green.png"
+                alt="Jobapay"
+                style="height: 20px; object-fit: contain; margin-bottom: 2px"
+              />
               <div class="app-bar-sub">Shift Schedule</div>
             </div>
             <button class="avatar-chip gray" onclick="goTo('sProfile')">
