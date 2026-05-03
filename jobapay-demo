@@ -424,7 +424,7 @@
 
       .kpi-card {
         background: var(--white);
-        border-radius: 16px;
+        border-radius: 12px;
         padding: 14px 12px;
         border: 1px solid var(--gray-200);
       }
@@ -463,7 +463,7 @@
       /* ── SITE CARD ─────────────────────────────────────────────── */
       .site-card {
         background: var(--white);
-        border-radius: 20px;
+        border-radius: 12px;
         padding: 18px;
         margin-bottom: 12px;
         border: 1px solid var(--gray-200);
@@ -612,7 +612,7 @@
         flex-shrink: 0;
         width: 190px;
         height: 265px;
-        border-radius: 18px;
+        border-radius: 12px;
         overflow: hidden;
         position: relative;
         background: var(--gray-100);
@@ -640,6 +640,20 @@
         border: 1px solid rgba(208, 255, 113, 0.25);
       }
 
+      .ai-bounding-box {
+        position: absolute;
+        border: 2px dashed var(--coral);
+        background: rgba(255, 111, 97, 0.1);
+        top: 30%;
+        left: 20%;
+        width: 50%;
+        height: 40%;
+        z-index: 10;
+        pointer-events: none;
+        box-shadow: 0 0 0 4px rgba(255, 111, 97, 0.2);
+        border-radius: 4px;
+      }
+
       .empty-evidence {
         background: var(--gray-100);
         border: 1px dashed var(--gray-300);
@@ -653,7 +667,7 @@
       /* ── AI VERDICT ────────────────────────────────────────────── */
       .ai-panel {
         background: var(--teal);
-        border-radius: 18px;
+        border-radius: 12px;
         padding: 20px;
         margin: 0 0 20px;
         position: relative;
@@ -751,20 +765,21 @@
       }
 
       /* ── ACTION BUTTONS ────────────────────────────────────────── */
-      .action-row {
+      .action-column {
         display: flex;
-        gap: 8px;
+        flex-direction: column;
+        gap: 12px;
         margin-top: 20px;
         padding-bottom: 48px;
       }
 
       .btn-primary {
-        flex: 1;
+        width: 100%;
         padding: 17px;
         background: var(--teal);
         color: var(--lime);
         border: none;
-        border-radius: 12px;
+        border-radius: 8px;
         font-family: var(--font-body);
         font-size: 14px;
         font-weight: 700;
@@ -778,29 +793,29 @@
         background: var(--teal-mid);
       }
 
-      .btn-outline-danger {
-        flex: 1;
-        padding: 17px;
+      .btn-text-danger {
+        width: 100%;
+        padding: 12px;
         background: transparent;
         color: var(--coral);
-        border: 1.5px solid var(--coral);
-        border-radius: 12px;
+        border: none;
         font-family: var(--font-body);
-        font-size: 14px;
-        font-weight: 700;
+        font-size: 13px;
+        font-weight: 600;
         cursor: pointer;
-        transition: all 0.18s;
+        transition: opacity 0.18s;
+        text-decoration: underline;
+        letter-spacing: 0.02em;
       }
 
-      .btn-outline-danger:active {
-        transform: scale(0.97);
-        background: rgba(255, 111, 97, 0.05);
+      .btn-text-danger:active {
+        opacity: 0.6;
       }
 
       /* ── STAFF HOME ─────────────────────────────────────────────── */
       .shift-card {
         background: var(--teal);
-        border-radius: 20px;
+        border-radius: 12px;
         padding: 22px;
         margin-bottom: 14px;
         cursor: pointer;
@@ -982,7 +997,7 @@
       /* ── PHOTO CAPTURE ───────────────────────────────────────────── */
       .capture-card {
         background: var(--white);
-        border-radius: 18px;
+        border-radius: 12px;
         padding: 18px;
         margin-bottom: 12px;
         border: 1px solid var(--gray-200);
@@ -1059,7 +1074,7 @@
         background: var(--lime);
         color: var(--teal);
         border: none;
-        border-radius: 12px;
+        border-radius: 8px;
         font-family: var(--font-body);
         font-size: 15px;
         font-weight: 700;
@@ -1086,7 +1101,7 @@
 
       .profile-card {
         background: var(--white);
-        border-radius: 20px;
+        border-radius: 12px;
         padding: 24px;
         margin: -48px 16px 16px;
         border: 1px solid var(--gray-200);
@@ -1150,7 +1165,7 @@
 
       .menu-card {
         background: var(--white);
-        border-radius: 16px;
+        border-radius: 12px;
         margin: 0 16px;
         overflow: hidden;
         border: 1px solid var(--gray-200);
@@ -1292,7 +1307,7 @@
         background: var(--teal);
         color: var(--lime);
         border: none;
-        border-radius: 12px;
+        border-radius: 8px;
         font-family: var(--font-body);
         font-size: 15px;
         font-weight: 700;
@@ -1448,9 +1463,6 @@
     </style>
   </head>
   <body>
-    <!-- ══════════════════════════════════════════
-     ENTRY SCREEN
-══════════════════════════════════════════ -->
     <div id="entry">
       <nav class="entry-nav">
         <svg
@@ -1531,12 +1543,8 @@
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-     APP
-══════════════════════════════════════════ -->
     <div id="app">
       <div class="phone-frame">
-        <!-- View switch bar -->
         <div class="view-bar">
           <button class="view-tab" id="tabStaff" onclick="switchView('staff')">
             Field Staff
@@ -1550,18 +1558,13 @@
           </button>
         </div>
 
-        <!-- Loader -->
         <div class="loader-overlay" id="loader">
           <div class="spinner"></div>
           <div class="loader-text" id="loaderText">Processing...</div>
         </div>
 
-        <!-- Toast -->
         <div class="toast-bar" id="toast"></div>
 
-        <!-- ─────────────────────────────────────
-         SCREEN: MANAGER DASHBOARD
-    ───────────────────────────────────── -->
         <div class="screen" id="sManager">
           <div class="app-bar">
             <div>
@@ -1577,12 +1580,12 @@
           <div class="scroll-area">
             <div class="kpi-grid">
               <div class="kpi-card">
-                <div class="kpi-num" id="kpiTotal">3</div>
+                <div class="kpi-num" id="kpiTotal">35</div>
                 <div class="kpi-lbl">Total Sites</div>
               </div>
               <div class="kpi-card featured">
                 <div class="kpi-num" id="kpiReview">0</div>
-                <div class="kpi-lbl">Pending Review</div>
+                <div class="kpi-lbl">Awaiting Reconciliation</div>
               </div>
               <div class="kpi-card">
                 <div class="kpi-num" id="kpiAlerts" style="color: var(--teal)">
@@ -1616,9 +1619,6 @@
           </div>
         </div>
 
-        <!-- ─────────────────────────────────────
-         SCREEN: SITE DETAIL
-    ───────────────────────────────────── -->
         <div class="screen" id="sSiteDetail">
           <div class="detail-header">
             <button class="back-link" onclick="goTo('sManager')">
@@ -1629,9 +1629,6 @@
           <div class="scroll-area" id="detailBody"></div>
         </div>
 
-        <!-- ─────────────────────────────────────
-         SCREEN: MANAGER PROFILE
-    ───────────────────────────────────── -->
         <div class="screen" id="sManagerProfile">
           <div class="profile-teal-bg">
             <button class="back-link-light" onclick="goTo('sManager')">
@@ -1647,11 +1644,11 @@
             </div>
             <div class="profile-stats">
               <div>
-                <div class="profile-stat-num" id="mgSiteCount">3</div>
+                <div class="profile-stat-num" id="mgSiteCount">35</div>
                 <div class="profile-stat-lbl">Sites</div>
               </div>
               <div>
-                <div class="profile-stat-num" id="mgStaffCount">3</div>
+                <div class="profile-stat-num" id="mgStaffCount">35</div>
                 <div class="profile-stat-lbl">Staff</div>
               </div>
               <div>
@@ -1695,9 +1692,6 @@
           <button class="logout-row" onclick="goToEntry()">Log Out</button>
         </div>
 
-        <!-- ─────────────────────────────────────
-         SCREEN: STAFF HOME
-    ───────────────────────────────────── -->
         <div class="screen" id="sStaff">
           <div class="app-bar">
             <div>
@@ -1711,9 +1705,6 @@
           <div class="scroll-area" id="staffBody"></div>
         </div>
 
-        <!-- ─────────────────────────────────────
-         SCREEN: ACTIVE SHIFT
-    ───────────────────────────────────── -->
         <div class="screen" id="sShift">
           <div class="shift-header-block">
             <button
@@ -1794,14 +1785,11 @@
               onclick="submitShift()"
               disabled
             >
-              Submit for AI Audit
+              Submit for Reconciliation
             </button>
           </div>
         </div>
 
-        <!-- ─────────────────────────────────────
-         SCREEN: SHIFT SUBMITTED
-    ───────────────────────────────────── -->
         <div class="screen" id="sSubmitted">
           <div
             class="scroll-area"
@@ -1850,9 +1838,6 @@
           </div>
         </div>
 
-        <!-- ─────────────────────────────────────
-         SCREEN: STAFF PROFILE
-    ───────────────────────────────────── -->
         <div class="screen" id="sProfile">
           <div class="profile-teal-bg">
             <button class="back-link-light" onclick="goTo('sStaff')">
@@ -1907,9 +1892,6 @@
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-     JAVASCRIPT
-══════════════════════════════════════════ -->
     <script>
       /* ── DATA ───────────────────────────────────────────────────── */
       const TASK_LABELS = [
@@ -2027,7 +2009,8 @@
         ).length;
         const alerts = sites.filter((s) => s.audit_status === "FLAGGED").length;
 
-        document.getElementById("kpiTotal").textContent = sites.length;
+        // Hardcode total sites to 35 for portfolio scale
+        document.getElementById("kpiTotal").textContent = "35";
         document.getElementById("kpiReview").textContent = reviewing;
         document.getElementById("kpiAlerts").textContent = alerts;
         document.getElementById("kpiAlerts").style.color =
@@ -2039,8 +2022,8 @@
         // profile stats
         const mgA = document.getElementById("mgAlertCount");
         if (mgA) {
-          document.getElementById("mgSiteCount").textContent = sites.length;
-          document.getElementById("mgStaffCount").textContent = sites.length;
+          document.getElementById("mgSiteCount").textContent = "35";
+          document.getElementById("mgStaffCount").textContent = "35";
           mgA.textContent = alerts;
           mgA.style.color = alerts > 0 ? "var(--coral)" : "var(--teal)";
         }
@@ -2057,7 +2040,7 @@
                     : "badge-active";
             const bt =
               s.audit_status === "REVIEWING"
-                ? "Pending Review"
+                ? "Awaiting Reconciliation"
                 : s.audit_status === "FLAGGED"
                   ? "Quality Alert"
                   : s.audit_status === "APPROVED"
@@ -2101,7 +2084,7 @@
 
         document.getElementById("detailName").textContent = s.name;
 
-        const gallery = (imgs, label) => {
+        const gallery = (imgs, label, applyBox) => {
           if (!imgs || !imgs.length)
             return `
       <div class="evidence-block">
@@ -2117,6 +2100,7 @@
               (u, i) => `
             <div class="photo-tile">
               <img src="${u}" alt="Evidence" loading="lazy" />
+              ${applyBox ? '<div class="ai-bounding-box"></div>' : ""}
               <div class="photo-tile-label">${TASK_LABELS[i] || "Task " + (i + 1)}</div>
             </div>`,
             )
@@ -2152,9 +2136,9 @@
         const actions =
           s.audit_status === "REVIEWING"
             ? `
-    <div class="action-row">
-      <button class="btn-primary" onclick="approveS('${s.id}')">Approve Audit</button>
-      <button class="btn-outline-danger" onclick="flagS('${s.id}')">Flag Issue</button>
+    <div class="action-column">
+      <button class="btn-primary" onclick="approveS('${s.id}')">Approve Reconciliation</button>
+      <button class="btn-text-danger" onclick="flagS('${s.id}')">Flag Quality Issue</button>
     </div>`
             : s.audit_status === "APPROVED"
               ? `<div class="status-confirmed approved">Audit Approved</div>`
@@ -2163,8 +2147,12 @@
                 : "";
 
         document.getElementById("detailBody").innerHTML =
-          gallery(s.evidence_before, "Visual Audit: Before Cleaning") +
-          gallery(s.evidence_after, "Visual Audit: After Cleaning") +
+          gallery(s.evidence_before, "Visual Audit: Before Cleaning", false) +
+          gallery(
+            s.evidence_after,
+            "Visual Audit: After Cleaning",
+            s.audit_status === "FLAGGED",
+          ) +
           aiBlock +
           actions;
 
@@ -2327,7 +2315,7 @@
         if (!beforeOk || !afterOk)
           btn.textContent = "Capture both photos to continue";
         else if (!allTasks) btn.textContent = "Complete all checklist items";
-        else btn.textContent = "Submit for AI Audit";
+        else btn.textContent = "Submit for Reconciliation";
       }
 
       function submitShift() {
