@@ -1,10 +1,12 @@
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>Jobapay — Platform Demo</title>
+    <title>Jobapay AI — Platform Demo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <style>
@@ -26,7 +28,7 @@
       :root {
         --teal: #004d43;
         --teal-mid: #006b5c;
-        --lime: #d0ff71;
+        --accent: #fde047;
         --mint: #27eaa6;
         --coral: #ff6f61;
         --dark: #02071b;
@@ -106,7 +108,7 @@
         font-size: 11px;
         font-weight: 600;
         letter-spacing: 0.2em;
-        color: var(--lime);
+        color: var(--accent);
         text-transform: uppercase;
         margin-bottom: 28px;
       }
@@ -124,7 +126,7 @@
 
       .entry-headline em {
         font-style: italic;
-        color: var(--lime);
+        color: var(--accent);
       }
 
       .entry-sub {
@@ -171,7 +173,7 @@
 
       .entry-cta {
         padding: 17px 52px;
-        background: var(--lime);
+        background: var(--accent);
         color: var(--teal);
         border: none;
         border-radius: 10px;
@@ -184,7 +186,7 @@
       }
 
       .entry-cta:hover {
-        background: #c8f55e;
+        background: #fef08a;
         transform: translateY(-1px);
       }
 
@@ -267,7 +269,7 @@
       }
 
       .view-tab.active {
-        background: var(--lime);
+        background: var(--accent);
         color: var(--teal);
       }
 
@@ -344,7 +346,7 @@
 
       .avatar-chip.teal {
         background: var(--teal);
-        color: var(--lime);
+        color: var(--accent);
       }
       .avatar-chip.gray {
         background: var(--gray-100);
@@ -452,7 +454,7 @@
       }
 
       .kpi-card.featured .kpi-num {
-        color: var(--lime);
+        color: var(--accent);
       }
 
       .kpi-lbl {
@@ -575,7 +577,7 @@
       .progress-fill {
         height: 100%;
         border-radius: 4px;
-        background: var(--lime);
+        background: var(--accent);
         transition: width 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
 
@@ -638,14 +640,14 @@
         bottom: 10px;
         left: 10px;
         background: rgba(0, 77, 67, 0.92);
-        color: var(--lime);
+        color: var(--accent);
         font-size: 8px;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.1em;
         padding: 4px 9px;
         border-radius: 6px;
-        border: 1px solid rgba(208, 255, 113, 0.25);
+        border: 1px solid rgba(253, 224, 71, 0.25);
       }
 
       .ai-bounding-box {
@@ -689,7 +691,7 @@
         right: -24px;
         width: 96px;
         height: 96px;
-        background: rgba(208, 255, 113, 0.06);
+        background: rgba(253, 224, 71, 0.06);
         border-radius: 50%;
         pointer-events: none;
       }
@@ -761,7 +763,7 @@
       .ai-score-fill {
         height: 100%;
         border-radius: 3px;
-        background: linear-gradient(90deg, var(--mint), var(--lime));
+        background: linear-gradient(90deg, var(--mint), var(--accent));
         transition: width 1.2s ease;
       }
 
@@ -769,7 +771,7 @@
         font-family: var(--font-mono);
         font-size: 12px;
         font-weight: 500;
-        color: var(--lime);
+        color: var(--accent);
       }
 
       /* ── ACTION BUTTONS ────────────────────────────────────────── */
@@ -785,7 +787,7 @@
         width: 100%;
         padding: 17px;
         background: var(--teal);
-        color: var(--lime);
+        color: var(--accent);
         border: none;
         border-radius: 8px;
         font-family: var(--font-body);
@@ -900,7 +902,7 @@
         right: -40px;
         width: 140px;
         height: 140px;
-        background: rgba(208, 255, 113, 0.05);
+        background: rgba(253, 224, 71, 0.05);
         border-radius: 50%;
         pointer-events: none;
       }
@@ -987,7 +989,7 @@
       .task-row.done .task-check-circle {
         background: var(--teal);
         border-color: var(--teal);
-        color: var(--lime);
+        color: var(--accent);
       }
 
       .task-text {
@@ -1066,7 +1068,7 @@
         top: 10px;
         right: 10px;
         background: rgba(0, 77, 67, 0.92);
-        color: var(--lime);
+        color: var(--accent);
         font-size: 9px;
         font-weight: 700;
         text-transform: uppercase;
@@ -1079,7 +1081,7 @@
       .submit-btn {
         width: 100%;
         padding: 19px;
-        background: var(--lime);
+        background: var(--accent);
         color: var(--teal);
         border: none;
         border-radius: 8px;
@@ -1313,7 +1315,7 @@
         margin-top: 20px;
         padding: 17px;
         background: var(--teal);
-        color: var(--lime);
+        color: var(--accent);
         border: none;
         border-radius: 8px;
         font-family: var(--font-body);
@@ -1476,7 +1478,7 @@
         <img
           src="./assets/logo-white.png"
           class="entry-nav-logo"
-          alt="Jobapay"
+          alt="Jobapay AI"
           style="height: 28px"
         />
         <span class="entry-nav-label">Platform Demo</span>
@@ -1485,11 +1487,11 @@
       <div class="entry-body">
         <div class="entry-kicker">Live Product Walkthrough</div>
         <h1 class="entry-headline">
-          Facility cleaning<br />that <em>actually works.</em>
+          The standard of proof<br />for the <em>deskless economy.</em>
         </h1>
         <p class="entry-sub">
-          Managed janitorial services, AI-powered quality checks, and strict
-          service standards. See the platform from both sides.
+          Immutable evidentiary records, AI-powered verification, and strict
+          operational standards. See the platform from both sides.
         </p>
 
         <div class="role-selector">
@@ -1505,7 +1507,7 @@
             id="roleManagerBtn"
             onclick="setRole('manager')"
           >
-            Facility Manager
+            Operations Manager
           </button>
         </div>
 
@@ -1513,13 +1515,13 @@
 
         <div class="entry-footer-row">
           <span class="entry-footer-item"
-            ><span class="entry-footer-dot"></span>No login required</span
+            ><span class="entry-footer-dot"></span>Link, no download</span
           >
           <span class="entry-footer-item"
-            ><span class="entry-footer-dot"></span>Full product flow</span
+            ><span class="entry-footer-dot"></span>Full verification flow</span
           >
           <span class="entry-footer-item"
-            ><span class="entry-footer-dot"></span>AI quality audit</span
+            ><span class="entry-footer-dot"></span>AI evidentiary audit</span
           >
           <span class="entry-footer-item"
             ><span class="entry-footer-dot"></span>Lagos pilot active</span
@@ -1554,8 +1556,8 @@
           <div class="app-bar">
             <div>
               <img
-                src="./assets/logo-green.png"
-                alt="Jobapay"
+                src="./assets/logo-teal.png"
+                alt="Jobapay AI"
                 style="height: 20px; object-fit: contain; margin-bottom: 2px"
               />
               <div class="app-bar-sub">Portfolio Overview</div>
@@ -1580,11 +1582,11 @@
                 <div class="kpi-num" id="kpiAlerts" style="color: var(--teal)">
                   0
                 </div>
-                <div class="kpi-lbl">Quality Alerts</div>
+                <div class="kpi-lbl">Verification Alerts</div>
               </div>
             </div>
 
-            <div class="section-label">Real-Time Property Feeds</div>
+            <div class="section-label">Real-Time Shift Feeds</div>
             <div id="siteList"></div>
 
             <button
@@ -1626,7 +1628,7 @@
           </div>
           <div class="profile-card">
             <div class="profile-avatar dark">MG</div>
-            <div class="profile-name">Facility Manager</div>
+            <div class="profile-name">Operations Manager</div>
             <div class="profile-role">Regional Admin &middot; ID: MGR-001</div>
             <div style="margin-top: 10px">
               <span class="badge badge-teal">Super Admin Access</span>
@@ -1685,8 +1687,8 @@
           <div class="app-bar">
             <div>
               <img
-                src="./assets/logo-green.png"
-                alt="Jobapay"
+                src="./assets/logo-teal.png"
+                alt="Jobapay AI"
                 style="height: 20px; object-fit: contain; margin-bottom: 2px"
               />
               <div class="app-bar-sub">Shift Schedule</div>
@@ -1718,7 +1720,7 @@
 
           <div class="scroll-area">
             <div class="capture-card">
-              <div class="capture-header">Before — Document site condition</div>
+              <div class="capture-header">Start — Document site condition</div>
               <div
                 class="capture-zone"
                 id="beforeZone"
@@ -1737,7 +1739,7 @@
                   <circle cx="12" cy="13" r="4" />
                 </svg>
                 <span class="capture-zone-hint"
-                  >Tap to capture before photo</span
+                  >Tap to capture start photo</span
                 >
               </div>
             </div>
@@ -1748,7 +1750,7 @@
             <div id="taskList"></div>
 
             <div class="capture-card" style="margin-top: 6px">
-              <div class="capture-header">After — Document completed work</div>
+              <div class="capture-header">End — Document completed work</div>
               <div
                 class="capture-zone"
                 id="afterZone"
@@ -1767,7 +1769,7 @@
                   <circle cx="12" cy="13" r="4" />
                 </svg>
                 <span class="capture-zone-hint"
-                  >Tap to capture after photo</span
+                  >Tap to capture end photo</span
                 >
               </div>
             </div>
@@ -1793,7 +1795,7 @@
                 <svg
                   viewBox="0 0 32 32"
                   fill="none"
-                  stroke="#d0ff71"
+                  stroke="#fde047"
                   stroke-width="2.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -1803,7 +1805,7 @@
               </div>
               <div class="success-title">Shift Submitted</div>
               <p class="success-sub">
-                Your evidence is queued for AI audit. Your manager will review
+                Your shift evidence is queued for AI audit. Your manager will review
                 and confirm completion.
               </p>
               <div class="proof-block">
@@ -1840,7 +1842,7 @@
           <div class="profile-card">
             <div class="profile-avatar gray">EA</div>
             <div class="profile-name">Ebun A.</div>
-            <div class="profile-role">Senior Cleaner &middot; ID: PRO-8821</div>
+            <div class="profile-role">Facility Staff &middot; ID: PRO-8821</div>
             <div style="margin-top: 10px">
               <span class="badge badge-approved">Top Rated Staff</span>
             </div>
@@ -1933,7 +1935,7 @@
           evidence_after: [AFTER_IMG],
           ai_score: 91,
           ai_text:
-            "Evidence looks clean. All zones appear covered. No issues detected in photo analysis.",
+            "Evidence verified. Location and timestamps match shift parameters. No anomalies detected.",
         },
       ];
 
@@ -2035,7 +2037,7 @@
               s.audit_status === "REVIEWING"
                 ? "Awaiting Reconciliation"
                 : s.audit_status === "FLAGGED"
-                  ? "Quality Alert"
+                  ? "Verification Alert"
                   : s.audit_status === "APPROVED"
                     ? "Approved"
                     : "Active";
@@ -2112,10 +2114,10 @@
     <div class="ai-panel">
       <div class="ai-header">
         <span class="ai-pulse"></span>
-        <span class="ai-label">AI Quality Audit</span>
+        <span class="ai-label">AI Verification Audit</span>
       </div>
       <div class="ai-verdict-text ${s.audit_status === "FLAGGED" ? "fail" : "pass"}">
-        ${s.ai_text || "Evidence looks clean. All zones appear covered. No issues detected."}
+        ${s.ai_text || "Evidence verified. Location and timestamps match shift parameters. No anomalies detected."}
       </div>
       <div class="ai-score-row">
         <div class="ai-score-track">
@@ -2131,19 +2133,19 @@
             ? `
     <div class="action-column">
       <button class="btn-primary" onclick="approveS('${s.id}')">Approve Reconciliation</button>
-      <button class="btn-text-danger" onclick="flagS('${s.id}')">Flag Quality Issue</button>
+      <button class="btn-text-danger" onclick="flagS('${s.id}')">Flag Verification Issue</button>
     </div>`
             : s.audit_status === "APPROVED"
               ? `<div class="status-confirmed approved">Audit Approved</div>`
               : s.audit_status === "FLAGGED"
-                ? `<div class="status-confirmed flagged">Quality Issue Flagged &mdash; Staff Notified</div>`
+                ? `<div class="status-confirmed flagged">Verification Issue Flagged &mdash; Staff Notified</div>`
                 : "";
 
         document.getElementById("detailBody").innerHTML =
-          gallery(s.evidence_before, "Visual Audit: Before Cleaning", false) +
+          gallery(s.evidence_before, "Evidentiary Record: Shift Start", false) +
           gallery(
             s.evidence_after,
-            "Visual Audit: After Cleaning",
+            "Evidentiary Record: Shift End",
             s.audit_status === "FLAGGED",
           ) +
           aiBlock +
@@ -2163,15 +2165,15 @@
       }
 
       function flagS(id) {
-        showLoader("Flagging quality issue...");
+        showLoader("Flagging verification issue...");
         setTimeout(() => {
           const s = sites.find((x) => x.id === id);
           s.audit_status = "FLAGGED";
           s.ai_text =
-            "Possible missed zone detected in Photo 2. Restroom area appears incomplete. Staff notification sent.";
+            "Verification anomaly detected in Photo 2. Visual evidence does not match expected site conditions. Staff notification sent.";
           s.ai_score = 54;
           hideLoader();
-          toast("Quality issue flagged. Staff notified.");
+          toast("Verification issue flagged. Staff notified.");
           goTo("sManager");
         }, 900);
       }
@@ -2185,12 +2187,12 @@
           el.innerHTML = `
       <div class="success-block" style="padding:32px 0 0;">
         <div class="success-mark" style="width:60px;height:60px;">
-          <svg viewBox="0 0 32 32" fill="none" stroke="#d0ff71" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 32 32" fill="none" stroke="#fde047" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="6,16 13,23 26,9"/>
           </svg>
         </div>
         <div class="success-title" style="font-size:22px;margin-top:16px;">Shift Complete</div>
-        <p class="success-sub" style="font-size:14px;margin-top:8px;">Your audit is under manager review.</p>
+        <p class="success-sub" style="font-size:14px;margin-top:8px;">Your shift evidence is under manager review.</p>
         <div class="proof-block" style="margin-top:20px;">
           <div class="proof-label">Summary</div>
           <div class="proof-item"><span class="proof-dot"></span>GPS: Lekki Phase 1 confirmed</div>
@@ -2263,8 +2265,8 @@
       function capturePhoto(t) {
         showLoader(
           t === "before"
-            ? "Capturing before photo..."
-            : "Capturing after photo...",
+            ? "Capturing start photo..."
+            : "Capturing end photo...",
         );
         setTimeout(() => {
           hideLoader();
@@ -2284,9 +2286,9 @@
         const z = document.getElementById("beforeZone");
         if (!z) return;
         if (beforeOk) {
-          z.innerHTML = `<img class="preview" src="${BEFORE_IMG}" alt="Before photo" /><div class="captured-tag">Captured</div>`;
+          z.innerHTML = `<img class="preview" src="${BEFORE_IMG}" alt="Start photo" /><div class="captured-tag">Captured</div>`;
         } else {
-          z.innerHTML = `<svg class="capture-zone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span class="capture-zone-hint">Tap to capture before photo</span>`;
+          z.innerHTML = `<svg class="capture-zone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span class="capture-zone-hint">Tap to capture start photo</span>`;
         }
       }
 
@@ -2294,9 +2296,9 @@
         const z = document.getElementById("afterZone");
         if (!z) return;
         if (afterOk) {
-          z.innerHTML = `<img class="preview" src="${AFTER_IMG}" alt="After photo" /><div class="captured-tag">Captured</div>`;
+          z.innerHTML = `<img class="preview" src="${AFTER_IMG}" alt="End photo" /><div class="captured-tag">Captured</div>`;
         } else {
-          z.innerHTML = `<svg class="capture-zone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span class="capture-zone-hint">Tap to capture after photo</span>`;
+          z.innerHTML = `<svg class="capture-zone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span class="capture-zone-hint">Tap to capture end photo</span>`;
         }
       }
 
@@ -2320,7 +2322,7 @@
           sites[0].evidence_after = [AFTER_IMG];
           sites[0].ai_score = 91;
           sites[0].ai_text =
-            "Evidence looks clean. All zones appear covered. No issues detected in photo analysis.";
+            "Evidence verified. Location and timestamps match shift parameters. No anomalies detected.";
           document.getElementById("submitTime").textContent =
             new Date().toLocaleTimeString([], {
               hour: "2-digit",
